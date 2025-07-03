@@ -13,9 +13,12 @@ async fn main() -> std::io::Result<()> {
     // Initialize logger
     env_logger::init_from_env(Env::default().default_filter_or("info"));
 
-    println!("🚀 Starting Rust Backend Server...");
+    println!("🦀 Starting Rust Backend Server...");
     println!("📡 Server running on http://localhost:8080");
-    println!("🔗 API endpoint: http://localhost:8080/api/multiply/{{num1}}/{{num2}}");
+    println!("🔗 API Endpoints:");
+    println!("   GET /api/health");
+    println!("   GET /api/multiply/{{num1}}/{{num2}}");
+    println!("📱 Frontend should run on http://localhost:5173");
 
     HttpServer::new(|| {
         let cors = Cors::default()
